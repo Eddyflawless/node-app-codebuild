@@ -6,7 +6,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email
       - IMAGE_NAME=node-app
       - REPOSITORY_URI=045954730817.dkr.ecr.us-east-2.amazonaws.com/$IMAGE_NAME
       - IMAGE_TAG=latest
