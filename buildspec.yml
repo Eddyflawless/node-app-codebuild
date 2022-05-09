@@ -9,7 +9,7 @@ phases:
       - REPOSITORY_URL=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - REPOSITORY_URI=$REPOSITORY_URL/$IMAGE_NAME
       - IMAGE_TAG=latest
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin REPOSITORY_URL
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URL
   build:
     commands:
       - echo Build started on `date`
